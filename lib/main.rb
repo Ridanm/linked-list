@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require './extra_credit'
-require './node'
-require './linked_list'
+require_relative 'extra_credit'
+require_relative 'node'
+require_relative 'linked_list'
 
 list = LinkedList.new
-list.append('two')
-list.append('three')
-list.prepend!('one')
-list.append('four')
-list.append('six')
-list.append('five')
+list.append(1)
+list.append(2)
+list.prepend!(0)
+list.append(3)
+list.append(4)
+list.append(5)
 
 print "\nAll nodes => "
 list.to_s
@@ -22,13 +22,13 @@ puts "at_index(1) => #{list.at(1).data}"
 puts "\nremove last #{list.pop}"
 puts "size => #{list.size}"
 
-puts "contains(four) => #{list.contains?('four')}"
+puts "contains(4) => #{list.contains?(4)}"
 puts "contains(five) => #{list.contains?('five')}"
-puts "find(one) return index => #{list.find('one')}"
-puts "find(five) return index => #{list.find('five')}"
-puts "find(six) return index => #{list.find('six')}"
+puts "find(2) return index => #{list.find(2)}"
+puts "find(4) return index => #{list.find(4)}"
+puts "find(6) return index => #{list.find(6)}"
 
-list.insert_at(6, 'insert_at(6)')
+list.insert_at(1, 'insert_at(1)')
 list.insert_at(0, 'insert_at(0)')
 list.insert_at(2, 'insert_at(2)')
 
