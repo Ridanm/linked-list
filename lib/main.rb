@@ -28,17 +28,19 @@ puts "find(2) return index => #{list.find(2)}"
 puts "find(4) return index => #{list.find(4)}"
 puts "find(6) return index => #{list.find(6)}"
 
-list.insert_at(1, 'insert_at(1)')
-list.insert_at(0, 'insert_at(0)')
-list.insert_at(2, 'insert_at(2)')
+puts "\nAdd items: "
+list.insert_at(1, 'insert_at(imdex 1)')
+list.insert_at(0, 'insert_at(index 0)')
+list.insert_at(5, 'insert_at(index 5)')
+list.to_s
 
+puts "\nRemove items: "
 list.remove_at(5)
 list.remove_at(0)
 list.remove_at(2)
-puts
 list.to_s
 
-puts "\nOdin list"
+puts "\nOdin list: "
 list_odin = LinkedList.new
 
 list_odin.append('dog')
