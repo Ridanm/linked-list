@@ -8,21 +8,19 @@ module ExtraCredit
     if index.zero?
       new_node.next_node = @head
       @head = new_node
-    else
+      return
+    end
+    
       current = @head
-      count = 0
-
-      while count < index
-        return if current.nil?
-
-        previous = current
-        current = previous.next_node
-        count += 1
+      (index - 1).times do
+        break if current.nil?
+        current = current.next_node
       end
 
-      new_node.next_node = current
-      previous.next_node = new_node
-    end
+      return if current.nil?
+    
+      new_node.next_node = current.next_node
+      current.next_node = new_node
   end
 
   def remove_at(index)
