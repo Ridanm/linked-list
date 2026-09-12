@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
+require 'colorize'
+
 # This module contains extra methods for the linked list project
 module ExtraCredit
   def insert_at(index, value)
+    msj = "The index(#{index}) must be a number!!!".light_red
+    return puts msj unless index.is_a?(Integer)
+    return if index < 0
     new_node = Node.new(value)
 
     if index.zero?
