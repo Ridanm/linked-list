@@ -19,6 +19,7 @@ puts "head => #{list.head_node.data}"
 puts "size => #{list.size}"
 puts "tail => #{list.tail.data}"
 puts "at_index(1) => #{list.at(1).data}"
+puts "at_index(3) => #{list.at(3).data}"
 puts "\nremove last #{list.pop}"
 puts "size => #{list.size}"
 
@@ -30,8 +31,7 @@ puts "find(6) return index => #{list.find(6)}"
 
 puts "\nAdd items: "
 list.insert_at(1, 'insert_at(imdex 1)')
-list.insert_at(0, 'insert_at(index 0)')
-list.insert_at(5, 'insert_at(index 5)')
+list.insert_at(4, 'insert_at(index 4)')
 list.to_s
 
 puts "\nRemove items: "
