@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'bundler/setup'
 require_relative 'extra_credit'
 require_relative 'node'
 require_relative 'linked_list'
@@ -32,6 +33,7 @@ puts "find(6) return index => #{list.find(6)}"
 puts "\nAdd items: "
 list.insert_at(1, 'insert_at(imdex 1)')
 list.insert_at(4, 'insert_at(index 4)')
+list.insert_at('rob', 'insert_at(index 4)')
 list.to_s
 
 puts "\nRemove items: "
