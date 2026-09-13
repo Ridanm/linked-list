@@ -5,9 +5,10 @@ require 'colorize'
 # This module contains extra methods for the linked list project
 module ExtraCredit
   def insert_at(index, value)
-    msj = "The index(#{index}) must be a number!!!".light_red
-    return puts msj unless index.is_a?(Integer)
-    return if index < 0
+   integer_msj = "The index(#{index}) must be a number!!!".yellow
+   raise ArgumentError, integer_msj unless index.is_a?(Integer)
+   raise IndexError, 'Index.out of bound(negative index not supported)'.yellow if index < 0
+    
     new_node = Node.new(value)
 
     if index.zero?
@@ -22,7 +23,7 @@ module ExtraCredit
         current = current.next_node
       end
 
-      return if current.nil?
+      raise IndexError, 'Index out of bounds'.yellow if current.nil?
     
       new_node.next_node = current.next_node
       current.next_node = new_node
