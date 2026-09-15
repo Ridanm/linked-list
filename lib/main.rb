@@ -35,7 +35,7 @@ list.insert_at(1, 'insert_at(imdex 1)')
 list.insert_at(4, 'insert_at(index 4)')
 # list.insert_at('rob', 'insert_at(string') # if it's a String
 # list.insert_at(-3, 'index -3') # negative Index
-list.insert_at(10, 'index > ') # index greater than the size of the list
+# list.insert_at(10, 'index > ') # index greater than the size of the list
 list.to_s
 
 puts "\nRemove items: "
