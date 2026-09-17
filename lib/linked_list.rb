@@ -38,21 +38,18 @@ class LinkedList
   end
 
   def head_node
-    return if head.nil?
+    return if @head.nil?
 
     @head
   end
 
   def tail
+   return if @head.nil?
+    
     node = @head
-    ref_last = nil
-
-    while node
-      ref_last = node
-      node = node.next_node
-    end
-
-    ref_last
+    node = node.next_node while node.next_node
+      
+    node
   end
 
   def at(index)
@@ -86,7 +83,7 @@ class LinkedList
 
     current = @head
     while current
-      return true if current.data == value
+      return true if current.value == value
 
       current = current.next_node
     end
@@ -95,7 +92,7 @@ class LinkedList
 
   def contains_recursive?(value, current = @head)
     return false if current.nil?
-    return true if current.data == value
+    return true if current.value == value
     return false if current.next_node.nil?
 
     contains_recursive?(value, current.next_node)
@@ -103,7 +100,7 @@ class LinkedList
 
   def find(value, node = @head, counter = 0)
     return nil if node.nil?
-    return counter if node.data == value
+    return counter if node.value == value
 
     find(value, node.next_node, counter += 1)
   end
@@ -111,7 +108,7 @@ class LinkedList
   def to_s(list = @head)
     return puts 'nil' if list.nil?
 
-    print "( #{list.data} ) -> "
+    print "( #{list.value} ) -> "
     to_s(list.next_node)
   end
 end
