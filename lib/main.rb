@@ -16,11 +16,11 @@ list.append(5)
 print "\nAll nodes => "
 list.to_s
 
-puts "head => #{list.head_node.data}"
+puts "head => #{list.head_node.value}"
 puts "size => #{list.size}"
-puts "tail => #{list.tail.data}"
-puts "at_index(1) => #{list.at(1).data}"
-puts "at_index(3) => #{list.at(3).data}"
+puts "tail => #{list.tail.value}"
+puts "at_index(1) => #{list.at(1).value}"
+puts "at_index(3) => #{list.at(3).value}"
 puts "\nremove last #{list.pop}"
 puts "size => #{list.size}"
 
@@ -45,12 +45,24 @@ list.remove_at(2)
 list.to_s
 
 puts "\nOdin list: "
-list_odin = LinkedList.new
+odin_list = LinkedList.new
 
-list_odin.append('dog')
-list_odin.append('cat')
-list_odin.append('parrot')
-list_odin.append('hamster')
-list_odin.append('snake')
-list_odin.append('turtle')
-list_odin.to_s
+odin_list.append('dog')
+odin_list.append('cat')
+odin_list.append('parrot')
+odin_list.append('hamster')
+odin_list.append('snake')
+odin_list.append('turtle')
+odin_list.to_s
+
+puts "\nVerifying tail"
+list_two = LinkedList.new
+
+list_two.head.value unless list_two.head&.value.nil?
+
+list_two.append(4)
+list_two.append(2)
+list_two.append(8)
+
+list_two.to_s
+puts list_two.tail.value
